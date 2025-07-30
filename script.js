@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     // Inicializa o Swiper
-     new Swiper('.swiper', {
+        new Swiper('.swiper', {
         loop: true,
         navigation: {
             nextEl: '.swiper-button-next',
@@ -24,11 +24,16 @@ document.addEventListener('DOMContentLoaded', function() {
             el: '.swiper-pagination',
             clickable: true,
         },
-        slidesPerView: 1,
-        spaceBetween: 24,
         autoplay: {
-            delay: 3000, 
-            disableOnInteraction: false 
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        spaceBetween: 24,
+        slidesPerView: 1, // padrão para mobile
+        breakpoints: {
+            900: {
+                slidesPerView: 3 // a partir de 900px, mostra 3 slides
+            }
         }
     });
 });
